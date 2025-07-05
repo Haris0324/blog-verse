@@ -7,7 +7,7 @@ import Footer from '@/Components/Footer';
 import Link from 'next/link';
 import axios from 'axios';
 
-const page = () => {
+const SpecificBlog = () => {
     const params = useParams();
     // Fetching the data based on id and save each data object of each blog in data state variable
     const [data,setData] = useState(null);
@@ -69,4 +69,4 @@ const page = () => {
   )
 }
 
-export default page
+export default SpecificBlog

@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-const subscriptions = () => {
+const Subscriptions = () => {
 
   // storing api data
   const [emails,setEmails] = useState([]);
@@ -67,4 +67,4 @@ const subscriptions = () => {
   )
 }
 
-export default subscriptions
+export default Subscriptions
