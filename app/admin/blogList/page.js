@@ -4,7 +4,7 @@ import BlogTableItem from '@/Components/AdminComponents/BlogTableItem'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const BlogList = () => {
+const BlogLists = () => {
 
   // storing all blogs from the api:
   const [blogs,setBlogs]  = useState([]);
@@ -67,4 +67,4 @@ const BlogList = () => {
   )
 }
 
-export default BlogList
+export default BlogLists
