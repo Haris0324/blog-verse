@@ -6,7 +6,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 import { setConfig } from 'next/config'
 
-const addProduct = () => {
+const AddProduct = () => {
     // when image is uploaded it should display in the image box
     const [image,setImage] = useState(false)
     // adding logic for adding data of the form in the database.
@@ -82,4 +82,4 @@ const addProduct = () => {
   )
 }
 
-export default addProduct
+export default AddProduct
