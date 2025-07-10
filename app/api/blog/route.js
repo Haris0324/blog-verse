@@ -79,3 +79,30 @@ export async function DELETE(request) {
     await BlogModel.findByIdAndDelete(id);
     return NextResponse.json({msg:"Blog Deleted"})
 }
+
+export async function PUT(request) {
+  const id = request.nextUrl.searchParams.get("id");
+
+  const formData = await request.formData();
+
+  const updateData = {
+    title: formData.get('title'),
+    description: formData.get('description'),
+    category: formData.get('category'),
+    author: formData.get('author'),
+    authorImg: formData.get('authorImg'),
+  };
+
+  const image = formData.get('image');
+  if (image && typeof image.name === 'string') {
+    const timeStamp = Date.now();
+    const imageBuffer = Buffer.from(await image.arrayBuffer());
+    const path = `./public/${timeStamp}_${image.name}`;
+    await writeFile(path, imageBuffer);
+    updateData.image = `/${timeStamp}_${image.name}`;
+  }
+
+  await BlogModel.findByIdAndUpdate(id, updateData);
+
+  return NextResponse.json({ success: true, msg: "Blog updated successfully" });
+}
