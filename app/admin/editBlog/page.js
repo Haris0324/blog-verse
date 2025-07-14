@@ -5,7 +5,7 @@ import React from 'react'
 const EditBlog = () => {
   return (
     <Suspense fallback={<div>Loading blog...</div>}>
-      <EditBlog />
+      <EditBlogFeature />
     </Suspense>
   )
 }
